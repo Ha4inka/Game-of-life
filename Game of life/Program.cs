@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Game_of_life
@@ -16,7 +13,7 @@ namespace Game_of_life
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GameOfLIfe());
+            Application.Run(new GameOfLIfeForm());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Game_of_life
 {
-    partial class GameOfLIfe
+    partial class GameOfLIfeForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -29,16 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameOfLIfe));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameOfLIfeForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CBselectedGeneration = new System.Windows.Forms.ComboBox();
             this.DUDuniverseFormat = new System.Windows.Forms.DomainUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.Continue = new System.Windows.Forms.Button();
-            this.Random_generation = new System.Windows.Forms.Button();
-            this.My_generation = new System.Windows.Forms.Button();
-            this.Template = new System.Windows.Forms.Label();
             this.NUDgenRate = new System.Windows.Forms.NumericUpDown();
-            this.Templates = new System.Windows.Forms.ListBox();
             this.Generation_rate = new System.Windows.Forms.Label();
             this.Clear = new System.Windows.Forms.Button();
             this.Pause = new System.Windows.Forms.Button();
@@ -49,6 +47,7 @@
             this.Resolution = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -73,14 +72,12 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.Black;
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
+            this.splitContainer1.Panel1.Controls.Add(this.CBselectedGeneration);
             this.splitContainer1.Panel1.Controls.Add(this.DUDuniverseFormat);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.Continue);
-            this.splitContainer1.Panel1.Controls.Add(this.Random_generation);
-            this.splitContainer1.Panel1.Controls.Add(this.My_generation);
-            this.splitContainer1.Panel1.Controls.Add(this.Template);
             this.splitContainer1.Panel1.Controls.Add(this.NUDgenRate);
-            this.splitContainer1.Panel1.Controls.Add(this.Templates);
             this.splitContainer1.Panel1.Controls.Add(this.Generation_rate);
             this.splitContainer1.Panel1.Controls.Add(this.Clear);
             this.splitContainer1.Panel1.Controls.Add(this.Pause);
@@ -97,16 +94,54 @@
             this.splitContainer1.SplitterDistance = 122;
             this.splitContainer1.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Unispace", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label2.Location = new System.Drawing.Point(477, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(321, 36);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "First generation:";
+            // 
+            // CBselectedGeneration
+            // 
+            this.CBselectedGeneration.AutoCompleteCustomSource.AddRange(new string[] {
+            "Random",
+            "My",
+            "Gun template",
+            "Loaf template"});
+            this.CBselectedGeneration.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.CBselectedGeneration.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.CBselectedGeneration.BackColor = System.Drawing.SystemColors.InfoText;
+            this.CBselectedGeneration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CBselectedGeneration.Font = new System.Drawing.Font("Unispace", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBselectedGeneration.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.CBselectedGeneration.FormattingEnabled = true;
+            this.CBselectedGeneration.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.CBselectedGeneration.Items.AddRange(new object[] {
+            "Random",
+            "My",
+            "Gun template",
+            "Loaf template"});
+            this.CBselectedGeneration.Location = new System.Drawing.Point(848, 50);
+            this.CBselectedGeneration.Name = "CBselectedGeneration";
+            this.CBselectedGeneration.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CBselectedGeneration.Size = new System.Drawing.Size(312, 44);
+            this.CBselectedGeneration.TabIndex = 18;
+            this.CBselectedGeneration.SelectedIndexChanged += new System.EventHandler(this.CBselectedGeneration_SelectedIndexChanged);
+            // 
             // DUDuniverseFormat
             // 
             this.DUDuniverseFormat.BackColor = System.Drawing.SystemColors.InfoText;
             this.DUDuniverseFormat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DUDuniverseFormat.Font = new System.Drawing.Font("Unispace", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DUDuniverseFormat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.DUDuniverseFormat.ForeColor = System.Drawing.Color.Fuchsia;
             this.DUDuniverseFormat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DUDuniverseFormat.Items.Add("Closed");
             this.DUDuniverseFormat.Items.Add("Limited");
-            this.DUDuniverseFormat.Location = new System.Drawing.Point(1295, 53);
+            this.DUDuniverseFormat.Location = new System.Drawing.Point(1237, 51);
             this.DUDuniverseFormat.Name = "DUDuniverseFormat";
             this.DUDuniverseFormat.ReadOnly = true;
             this.DUDuniverseFormat.Size = new System.Drawing.Size(182, 43);
@@ -121,7 +156,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Unispace", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(1472, 52);
+            this.label1.Location = new System.Drawing.Point(1414, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 41);
             this.label1.TabIndex = 15;
@@ -141,47 +176,6 @@
             this.Continue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Continue.UseVisualStyleBackColor = true;
             this.Continue.Click += new System.EventHandler(this.Continue_Click);
-            // 
-            // Random_generation
-            // 
-            this.Random_generation.BackColor = System.Drawing.SystemColors.InfoText;
-            this.Random_generation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Random_generation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Random_generation.Font = new System.Drawing.Font("Unispace", 17F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Random_generation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Random_generation.Location = new System.Drawing.Point(501, 79);
-            this.Random_generation.Name = "Random_generation";
-            this.Random_generation.Size = new System.Drawing.Size(357, 49);
-            this.Random_generation.TabIndex = 12;
-            this.Random_generation.Text = "Random generation";
-            this.Random_generation.UseVisualStyleBackColor = false;
-            this.Random_generation.Click += new System.EventHandler(this.Random_generation_Click);
-            // 
-            // My_generation
-            // 
-            this.My_generation.BackColor = System.Drawing.SystemColors.InfoText;
-            this.My_generation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.My_generation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.My_generation.Font = new System.Drawing.Font("Unispace", 17F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.My_generation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.My_generation.Location = new System.Drawing.Point(916, 77);
-            this.My_generation.Name = "My_generation";
-            this.My_generation.Size = new System.Drawing.Size(334, 49);
-            this.My_generation.TabIndex = 11;
-            this.My_generation.Text = "My generation";
-            this.My_generation.UseVisualStyleBackColor = false;
-            this.My_generation.Click += new System.EventHandler(this.My_generation_Click);
-            // 
-            // Template
-            // 
-            this.Template.AutoSize = true;
-            this.Template.Font = new System.Drawing.Font("Unispace", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Template.ForeColor = System.Drawing.SystemColors.Control;
-            this.Template.Location = new System.Drawing.Point(932, 27);
-            this.Template.Name = "Template";
-            this.Template.Size = new System.Drawing.Size(151, 34);
-            this.Template.TabIndex = 10;
-            this.Template.Text = "Template";
             // 
             // NUDgenRate
             // 
@@ -208,21 +202,6 @@
             0,
             0,
             0});
-            // 
-            // Templates
-            // 
-            this.Templates.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.Templates.Font = new System.Drawing.Font("Unispace", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Templates.FormattingEnabled = true;
-            this.Templates.ItemHeight = 33;
-            this.Templates.Items.AddRange(new object[] {
-            "Gun",
-            "Loafer"});
-            this.Templates.Location = new System.Drawing.Point(1089, 25);
-            this.Templates.Name = "Templates";
-            this.Templates.Size = new System.Drawing.Size(152, 37);
-            this.Templates.TabIndex = 8;
-            this.Templates.SelectedIndexChanged += new System.EventHandler(this.Templates_SelectedIndexChanged);
             // 
             // Generation_rate
             // 
@@ -281,20 +260,25 @@
             // NUDdensity
             // 
             this.NUDdensity.BackColor = System.Drawing.SystemColors.InfoText;
-            this.NUDdensity.Font = new System.Drawing.Font("Unispace", 16F, System.Drawing.FontStyle.Bold);
+            this.NUDdensity.Font = new System.Drawing.Font("Unispace", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NUDdensity.ForeColor = System.Drawing.SystemColors.Control;
-            this.NUDdensity.Location = new System.Drawing.Point(706, 27);
+            this.NUDdensity.Location = new System.Drawing.Point(1021, 100);
+            this.NUDdensity.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
             this.NUDdensity.Minimum = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
             0});
             this.NUDdensity.Name = "NUDdensity";
-            this.NUDdensity.Size = new System.Drawing.Size(90, 39);
+            this.NUDdensity.Size = new System.Drawing.Size(90, 35);
             this.NUDdensity.TabIndex = 3;
             this.NUDdensity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.NUDdensity.Value = new decimal(new int[] {
-            3,
+            25,
             0,
             0,
             0});
@@ -302,13 +286,14 @@
             // Density
             // 
             this.Density.AutoSize = true;
-            this.Density.Font = new System.Drawing.Font("Unispace", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Density.Font = new System.Drawing.Font("Unispace", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Density.ForeColor = System.Drawing.SystemColors.Control;
-            this.Density.Location = new System.Drawing.Point(557, 29);
+            this.Density.Location = new System.Drawing.Point(901, 102);
             this.Density.Name = "Density";
-            this.Density.Size = new System.Drawing.Size(134, 34);
+            this.Density.Size = new System.Drawing.Size(124, 28);
             this.Density.TabIndex = 2;
-            this.Density.Text = "Density";
+            this.Density.Text = "Density ";
+            this.toolTip1.SetToolTip(this.Density, "Parameter for random generation only");
             // 
             // NUDresolution
             // 
@@ -355,15 +340,15 @@
             this.pictureBox1.Size = new System.Drawing.Size(1916, 533);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CellClickHandler);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CellClickMoveHandler);
             // 
             // timer1
             // 
             this.timer1.Interval = 45;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // GameOfLIfe
+            // GameOfLIfeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -373,7 +358,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "GameOfLIfe";
+            this.Name = "GameOfLIfeForm";
             this.Text = "Game of lIfe";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -401,15 +386,15 @@
         private System.Windows.Forms.Button Pause;
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ListBox Templates;
         private System.Windows.Forms.Label Generation_rate;
         private System.Windows.Forms.NumericUpDown NUDgenRate;
-        private System.Windows.Forms.Label Template;
-        private System.Windows.Forms.Button My_generation;
-        private System.Windows.Forms.Button Random_generation;
         private System.Windows.Forms.Button Continue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DomainUpDown DUDuniverseFormat;
+        private System.Windows.Forms.ComboBox CBselectedGeneration;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }
 
