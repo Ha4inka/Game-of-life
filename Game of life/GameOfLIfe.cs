@@ -131,7 +131,6 @@ namespace Game_of_life
 
             }
         }
-
         private void CellClickMoveHandler(object sender, MouseEventArgs e)
         {
             if (resolution == 0) return;
@@ -166,8 +165,8 @@ namespace Game_of_life
             StartParam();
             gameEngine = new GameEngine
                 (
-                  nOfcols: pictureBox1.Width / resolution,
-                  nOfrows: pictureBox1.Height / resolution,
+                  nOfCols: pictureBox1.Width / resolution,
+                  nOfRows: pictureBox1.Height / resolution,
                   universeFormat: DUDuniverseFormat.Text,
                   density: (int)NUDdensity.Maximum + (int)NUDdensity.Minimum - (int)NUDdensity.Value
                 );
@@ -208,13 +207,13 @@ namespace Game_of_life
         string universeFormat;
         int density;
         public uint CurrentGeneration { get; private set; }
-        public GameEngine(int nOfcols, int nOfrows, string universeFormat, int density)
+        public GameEngine(int nOfCols, int nOfRows, string universeFormat, int density)
         {
-            this.nOfcols = nOfcols;
-            this.nOfrows = nOfrows;
+            this.nOfcols = nOfCols;
+            this.nOfrows = nOfRows;
             this.universeFormat = universeFormat;
             this.density = density;
-            deadOrAlive = new bool[nOfcols, nOfrows];
+            deadOrAlive = new bool[nOfCols, nOfRows];
         }
         public bool[,] GetCurrentGeneration()
         {
