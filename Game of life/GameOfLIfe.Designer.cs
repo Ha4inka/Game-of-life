@@ -124,11 +124,11 @@
             "Random",
             "My",
             "Gun template",
-            "Loaf template"});
+            "Loafer template"});
             this.CBselectedGeneration.Location = new System.Drawing.Point(848, 50);
             this.CBselectedGeneration.Name = "CBselectedGeneration";
             this.CBselectedGeneration.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CBselectedGeneration.Size = new System.Drawing.Size(312, 44);
+            this.CBselectedGeneration.Size = new System.Drawing.Size(340, 44);
             this.CBselectedGeneration.TabIndex = 18;
             this.CBselectedGeneration.SelectedIndexChanged += new System.EventHandler(this.CBselectedGeneration_SelectedIndexChanged);
             // 
